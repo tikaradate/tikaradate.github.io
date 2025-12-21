@@ -1,1 +1,181 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tikara — Researcher</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --text: #1a1a1a;
+            --text-secondary: #555;
+            --accent: #8b0000;
+            --bg: #fafaf8;
+            --border: #ddd;
+        }
+
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            padding: 3rem 1.5rem;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .publication {
+            margin-bottom: 1.25rem;
+        }
+
+        .publication:last-child {
+            margin-bottom: 0;
+        }
+
+        .pub-title {
+            font-weight: 600;
+        }
+
+        .pub-venue {
+            font-style: italic;
+        }
+
+        .pub-authors {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-list {
+            font-family: 'Source Sans 3', sans-serif;
+        }
+
+        .contact-list span {
+            color: var(--text-secondary);
+            margin-right: 0.25rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p class="subtitle">Master's Student in Informatics · Federal University of Paraná</p>
+    </header>
+
+    <section>
+        <h2>About</h2>
+        <p>
+            I am a Master's student in Informatics at the Federal University of Paraná (UFPR) in Brazil, 
+            where I work on string algorithms and compressed text indexes. My research focuses on 
+            repetitiveness measures in strings, particularly the relationship between combinatorial 
+            and compression-based measures.
+        </p>
+        <p>
+            Previously, I completed my undergraduate degree at UFPR, where I received the SBC 
+            Outstanding Student Award and participated in ICPC competitive programming both as a competitor and as a coach.
+        </p>
+    </section>
+
+    <section>
+        <h2>Research Interests</h2>
+        <p>
+            Stringology, compressed data structures, repetitiveness measures, combinatorics on words, 
+            succinct data structures.
+        </p>
+    </section>
+
+    <section>
+        <h2>Publications</h2>
+        
+        <div class="publication">
+            <p class="pub-title">On the Asymptotic Tightness of the χ ≤ 2r Bound</p>
+            <p class="pub-authors">Vinicius Tikara Venturi Date, Leandro Miranda Zatesko</p>
+            <p class="pub-venue">Submitted to LATIN 2026</p>
+        </div>
+
+        <!-- Add more publications as needed -->
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <p class="contact-list">
+            <span>Email:</span> <a href="mailto:tikaradate@gmail.com">tikaradate@gmail.com</a><br>
+            <span>GitHub:</span> <a href="https://github.com/tikaradate">github.com/tikaradate</a><br>
+            <span>Scholar:</span> <a href="https://scholar.google.com.br/citations?user=Ktm9lZcAAAAJ&hl=pt-BR">Google Scholar</a>
+        </p>
+    </section>
+
+    <footer>
+        Last updated December 2025
+    </footer>
+</body>
+</html>
