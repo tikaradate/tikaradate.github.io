@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinicius Tikara — Mestrando</title>
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Vinicius Tikara Venturi Date — Mestrando em Informática na UFPR, trabalhando com algoritmos em strings, medidas de repetitividade e estruturas de dados comprimidas.">
+    <meta property="og:title" content="Vinicius Tikara — Mestrando">
+    <meta property="og:description" content="Mestrando em Informática na UFPR, trabalhando com algoritmos em strings, medidas de repetitividade e estruturas de dados comprimidas.">
+    <meta property="og:url" content="https://tikara.date/pt.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vinicius Tikara — Mestrando">
+    <meta name="twitter:description" content="Mestrando em Informática na UFPR, trabalhando com algoritmos em strings e estruturas de dados comprimidas.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>τ</text></svg>">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -85,7 +99,7 @@
 
         /* Header */
         header {
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             position: relative;
         }
 
@@ -122,6 +136,38 @@
             padding: 0.5rem 1rem;
             border-radius: 4px;
             border: 1px solid var(--border);
+        }
+
+        /* News */
+        .news {
+            margin-bottom: 3.5rem;
+            padding: 1.25rem;
+            background: var(--bg-alt);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .news h2 {
+            margin-bottom: 1rem;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .news-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            flex-shrink: 0;
+            min-width: 5rem;
         }
 
         /* Sections */
@@ -287,10 +333,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        header, section {
+        header, section, .news {
             animation: fadeIn 0.6s ease-out backwards;
         }
 
+        .news { animation-delay: 0.05s; }
         section:nth-of-type(1) { animation-delay: 0.1s; }
         section:nth-of-type(2) { animation-delay: 0.15s; }
         section:nth-of-type(3) { animation-delay: 0.2s; }
@@ -304,6 +351,8 @@
             .container { padding: 2.5rem 1.25rem 4rem; }
             .name { font-size: 2rem; }
             .award-header { flex-direction: column; gap: 0.25rem; }
+            .news-item { flex-direction: column; gap: 0.25rem; }
+            .news-date { min-width: auto; }
         }
     </style>
 </head>
@@ -318,10 +367,22 @@
             <h1 class="name">Vinicius Tikara Venturi Date</h1>
             <p class="affiliation">Mestrando em Informática · Universidade Federal do Paraná</p>
             <div class="header-links">
-                <a href="/cv.pdf">Currículo em inglês (PDF)</a>
+                <a href="/cv.pdf">Currículo (PDF)</a>
             </div>
             <span class="status">→ Buscando posições de doutorado para 2026</span>
         </header>
+
+        <div class="news">
+            <h2>Novidades</h2>
+            <div class="news-item">
+                <span class="news-date">Jan 2025</span>
+                <span>Decisão do LATIN 2026 pendente</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">Dez 2025</span>
+                <span>Aplicando para programas de doutorado na Europa e Ásia</span>
+            </div>
+        </div>
 
         <section>
             <h2>Sobre</h2>
@@ -332,19 +393,22 @@
                 superiores naturais não podem ser melhorados.
             </p>
             <p>
-                Atualmente, minha pesquisa foca em medidas de repetitividade em strings — 
+                Atualmente, minha pesquisa foca em medidas de repetitividade em strings. Em particular, 
                 a relação entre complexidade combinatória e baseada em compressão. 
                 Mas tenho interesse amplo em problemas onde estrutura discreta encontra 
-                restrições computacionais: satisfação de restrições, lower bounds para 
-                estruturas de dados e a matemática da representação eficiente.
+                restrições computacionais: lower bounds para estruturas de dados 
+                e a matemática da representação eficiente.
+            </p>
+            <p>
+                Trabalho com <a href="https://pessoal.dainf.ct.utfpr.edu.br/zatesko/">Leandro Zatesko</a> 
+                como parte do <a href="https://www.inf.ufpr.br/teoria/">Grupo de Teoria</a> da UFPR.
             </p>
         </section>
 
         <section>
             <h2>Interesses de Pesquisa</h2>
             <p>
-                Combinatória, stringologia, estruturas de dados comprimidas, 
-                satisfação de restrições, complexidade computacional.
+                Combinatória, stringologia, estruturas de dados comprimidas, complexidade computacional.
             </p>
         </section>
 
@@ -394,6 +458,7 @@
                     <span class="award-name">Prêmio Estudante Destaque SBC</span>
                     <span class="award-year">2023</span>
                 </div>
+                <p class="award-detail">Representante do Departamento de Ciência da Computação da UFPR</p>
             </div>
 
             <div class="award">
@@ -446,7 +511,6 @@
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const stored = localStorage.getItem('theme');
         
-        // Set initial theme
         if (stored) {
             document.documentElement.setAttribute('data-theme', stored);
             toggle.textContent = stored === 'dark' ? '☀️' : '🌙';

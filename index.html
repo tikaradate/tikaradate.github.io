@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinicius Tikara — MSc Student</title>
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Vinicius Tikara Venturi Date — Master's student in Informatics at UFPR, working on string algorithms, repetitiveness measures, and compressed data structures.">
+    <meta property="og:title" content="Vinicius Tikara — MSc Student">
+    <meta property="og:description" content="Master's student in Informatics at UFPR, working on string algorithms, repetitiveness measures, and compressed data structures.">
+    <meta property="og:url" content="https://tikara.date">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vinicius Tikara — MSc Student">
+    <meta name="twitter:description" content="Master's student in Informatics at UFPR, working on string algorithms and compressed data structures.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>τ</text></svg>">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -85,7 +99,7 @@
 
         /* Header */
         header {
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             position: relative;
         }
 
@@ -122,6 +136,38 @@
             padding: 0.5rem 1rem;
             border-radius: 4px;
             border: 1px solid var(--border);
+        }
+
+        /* News */
+        .news {
+            margin-bottom: 3.5rem;
+            padding: 1.25rem;
+            background: var(--bg-alt);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .news h2 {
+            margin-bottom: 1rem;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .news-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            flex-shrink: 0;
+            min-width: 5rem;
         }
 
         /* Sections */
@@ -287,10 +333,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        header, section {
+        header, section, .news {
             animation: fadeIn 0.6s ease-out backwards;
         }
 
+        .news { animation-delay: 0.05s; }
         section:nth-of-type(1) { animation-delay: 0.1s; }
         section:nth-of-type(2) { animation-delay: 0.15s; }
         section:nth-of-type(3) { animation-delay: 0.2s; }
@@ -304,6 +351,8 @@
             .container { padding: 2.5rem 1.25rem 4rem; }
             .name { font-size: 2rem; }
             .award-header { flex-direction: column; gap: 0.25rem; }
+            .news-item { flex-direction: column; gap: 0.25rem; }
+            .news-date { min-width: auto; }
         }
     </style>
 </head>
@@ -323,6 +372,18 @@
             <span class="status">→ Seeking PhD positions for Fall 2026</span>
         </header>
 
+        <div class="news">
+            <h2>News</h2>
+            <div class="news-item">
+                <span class="news-date">Jan 2025</span>
+                <span>LATIN 2026 decision pending</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">Dec 2025</span>
+                <span>Applying to PhD programs in Europe and Asia</span>
+            </div>
+        </div>
+
         <section>
             <h2>About</h2>
             <p>
@@ -331,19 +392,22 @@
                 finding structural invariants, and proving that natural upper bounds cannot be improved.
             </p>
             <p>
-                Currently, my research focuses on repetitiveness measures in strings — 
+                Currently, my research focuses on repetitiveness measures in strings. In particular, 
                 the relationship between combinatorial and compression-based complexity. 
                 But I'm broadly interested in problems where discrete structure meets 
-                computational constraints: constraint satisfaction, data structure lower bounds, 
+                computational constraints: data structure lower bounds, 
                 and the mathematics of efficient representation.
+            </p>
+            <p>
+                I work with <a href="https://pessoal.dainf.ct.utfpr.edu.br/zatesko/">Leandro Zatesko</a> 
+                as part of the <a href="https://www.inf.ufpr.br/teoria/">Theory Group</a> at UFPR.
             </p>
         </section>
 
         <section>
             <h2>Research Interests</h2>
             <p>
-                Combinatorics, stringology, compressed data structures, 
-                constraint satisfaction, computational complexity.
+                Combinatorics, stringology, compressed data structures, computational complexity.
             </p>
         </section>
 
@@ -393,6 +457,7 @@
                     <span class="award-name">SBC Outstanding Student Award</span>
                     <span class="award-year">2023</span>
                 </div>
+                <p class="award-detail">UFPR Computer Science department representative</p>
             </div>
 
             <div class="award">
@@ -445,7 +510,6 @@
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const stored = localStorage.getItem('theme');
         
-        // Set initial theme
         if (stored) {
             document.documentElement.setAttribute('data-theme', stored);
             toggle.textContent = stored === 'dark' ? '☀️' : '🌙';
