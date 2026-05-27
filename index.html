@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinicius Tikara — MSc Student</title>
-    
-    <!-- Meta tags -->
-    <meta name="description" content="Vinicius Tikara Venturi Date — Master's student in Informatics at UFPR, working on string algorithms, repetitiveness measures, and compressed data structures.">
-    <meta property="og:title" content="Vinicius Tikara — MSc Student">
-    <meta property="og:description" content="Master's student in Informatics at UFPR, working on string algorithms, repetitiveness measures, and compressed data structures.">
+    <title>Vinicius Tikara — Computer Scientist</title>
+
+    <meta name="description" content="Vinicius Tikara Venturi Date — Master's student in Informatics at UFPR, working on string algorithms, de Bruijn sequences, the Burrows-Wheeler transform, and repetitiveness measures.">
+    <meta name="theme-color" content="#f9f8fc">
+
+    <meta property="og:title" content="Vinicius Tikara — Computer Scientist">
+    <meta property="og:description" content="Master's student in Informatics at UFPR, working on string algorithms, de Bruijn sequences, the Burrows-Wheeler transform, and repetitiveness measures.">
     <meta property="og:url" content="https://tikara.date">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tikara.date/assets/bird.png">
+
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Vinicius Tikara — MSc Student">
-    <meta name="twitter:description" content="Master's student in Informatics at UFPR, working on string algorithms and compressed data structures.">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>τ</text></svg>">
-    
+    <meta name="twitter:title" content="Vinicius Tikara — Computer Scientist">
+    <meta name="twitter:description" content="Master's student in Informatics at UFPR, working on string algorithms, de Bruijn sequences, the Burrows-Wheeler transform, and repetitiveness measures.">
+    <meta name="twitter:image" content="https://tikara.date/assets/bird.png">
+
+    <link rel="icon" href="/assets/bird.png">
+    <link rel="apple-touch-icon" href="/assets/bird.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -36,6 +41,7 @@
             --bg: #f9f8fc;
             --bg-alt: #f0eef6;
             --border: #ddd9e8;
+            --shadow: rgba(55, 45, 75, 0.08);
         }
 
         [data-theme="dark"] {
@@ -46,6 +52,7 @@
             --bg: #18171c;
             --bg-alt: #221f29;
             --border: #3a3644;
+            --shadow: rgba(0, 0, 0, 0.25);
         }
 
         html {
@@ -63,15 +70,15 @@
         }
 
         .container {
-            max-width: 720px;
+            max-width: 760px;
             margin: 0 auto;
             padding: 4rem 2rem 6rem;
         }
 
-        /* Top bar */
         .top-bar {
             display: flex;
             justify-content: flex-end;
+            align-items: center;
             gap: 1rem;
             margin-bottom: 2rem;
             font-family: 'JetBrains Mono', monospace;
@@ -97,10 +104,24 @@
             line-height: 1;
         }
 
-        /* Header */
         header {
             margin-bottom: 3rem;
-            position: relative;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 112px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .bird {
+            width: 112px;
+            height: 112px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px var(--shadow);
+            object-fit: cover;
         }
 
         .name {
@@ -114,31 +135,17 @@
         .affiliation {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .header-links {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem 1.5rem;
-            margin-bottom: 1.5rem;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.85rem;
         }
 
-        .status {
-            display: inline-block;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--accent);
-            background: var(--bg-alt);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-        }
-
-        /* News */
         .news {
             margin-bottom: 3.5rem;
             padding: 1.25rem;
@@ -170,7 +177,6 @@
             min-width: 5rem;
         }
 
-        /* Sections */
         section {
             margin-bottom: 3.5rem;
         }
@@ -203,7 +209,10 @@
             margin-bottom: 0;
         }
 
-        /* Links */
+        strong {
+            font-weight: 600;
+        }
+
         a {
             color: var(--accent);
             text-decoration: none;
@@ -214,33 +223,33 @@
             color: var(--accent-hover);
         }
 
-        /* Publications */
-        .publication {
+        .item {
             padding: 1.25rem 0;
             border-bottom: 1px solid var(--border);
         }
 
-        .publication:first-of-type {
+        .item:first-of-type {
             padding-top: 0;
         }
 
-        .publication:last-of-type {
+        .item:last-of-type {
             border-bottom: none;
         }
 
-        .pub-title {
+        .item-title {
             font-weight: 600;
             font-size: 1.05rem;
             margin-bottom: 0.35rem;
         }
 
-        .pub-authors {
+        .item-authors,
+        .item-note {
             font-size: 0.95rem;
             color: var(--text-secondary);
             margin-bottom: 0.35rem;
         }
 
-        .pub-meta {
+        .item-meta {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.8rem;
             color: var(--text-secondary);
@@ -250,15 +259,10 @@
             align-items: center;
         }
 
-        .pub-meta .status-tag {
+        .status-tag {
             color: var(--accent);
         }
 
-        .pub-meta a {
-            font-size: 0.8rem;
-        }
-
-        /* Awards */
         .award {
             padding: 0.75rem 0;
             border-bottom: 1px solid var(--border);
@@ -292,10 +296,9 @@
             margin-top: 0.25rem;
         }
 
-        /* Contact */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 0.75rem 2rem;
         }
 
@@ -313,7 +316,6 @@
             margin-bottom: 0.25rem;
         }
 
-        /* Footer */
         footer {
             margin-top: 5rem;
             padding-top: 2rem;
@@ -327,7 +329,6 @@
             gap: 1rem;
         }
 
-        /* Subtle animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -344,15 +345,46 @@
         section:nth-of-type(4) { animation-delay: 0.25s; }
         section:nth-of-type(5) { animation-delay: 0.3s; }
         section:nth-of-type(6) { animation-delay: 0.35s; }
+        section:nth-of-type(7) { animation-delay: 0.4s; }
+        section:nth-of-type(8) { animation-delay: 0.45s; }
 
-        /* Mobile adjustments */
-        @media (max-width: 600px) {
-            body { font-size: 17px; }
-            .container { padding: 2.5rem 1.25rem 4rem; }
-            .name { font-size: 2rem; }
-            .award-header { flex-direction: column; gap: 0.25rem; }
-            .news-item { flex-direction: column; gap: 0.25rem; }
-            .news-date { min-width: auto; }
+        @media (max-width: 640px) {
+            body {
+                font-size: 17px;
+            }
+
+            .container {
+                padding: 2.5rem 1.25rem 4rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .bird {
+                width: 96px;
+                height: 96px;
+                order: -1;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .award-header {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .news-item {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .news-date {
+                min-width: auto;
+            }
         }
     </style>
 </head>
@@ -360,46 +392,61 @@
     <div class="container">
         <nav class="top-bar">
             <a href="/pt.html">PT</a>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
         </nav>
 
         <header>
-            <h1 class="name">Vinicius Tikara Venturi Date</h1>
-            <p class="affiliation">Master's Student in Informatics · Federal University of Paraná</p>
-            <div class="header-links">
-                <a href="/cv.pdf">CV (PDF)</a>
+            <div class="hero">
+                <div>
+                    <h1 class="name">Vinicius Tikara Venturi Date</h1>
+                    <p class="affiliation">Master's Student in Informatics · Federal University of Paraná</p>
+                    <div class="header-links">
+                        <a href="mailto:vtvdate@inf.ufpr.br">email</a>
+                        <a href="https://github.com/tikaradate">github</a>
+                        <a href="https://scholar.google.com.br/citations?user=Ktm9lZcAAAAJ">scholar</a>
+                        <a href="https://orcid.org/0000-0002-5416-4102">orcid</a>
+                    </div>
+                </div>
+                <img class="bird" src="/assets/bird.png" alt="Three-tone bird drawing">
             </div>
-            <span class="status">→ Seeking PhD positions for Fall 2026</span>
         </header>
 
         <div class="news">
             <h2>News</h2>
             <div class="news-item">
-                <span class="news-date">Dec 2025</span>
-                <span>Paper accepted at <a href="#">LATIN 2026</a>!</span>
+                <span class="news-date">May 2026</span>
+                <span>Working on successor right-special strings and low-run BWT constructions.</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">Apr 2026</span>
+                <span>Presented <a href="https://arxiv.org/abs/2512.20598">On the near-tightness of χ ≤ 2r</a> at LATIN 2026 in Florianópolis.</span>
             </div>
             <div class="news-item">
                 <span class="news-date">Dec 2025</span>
-                <span>Applying to PhD programs in Europe and Asia</span>
+                <span>Paper accepted at LATIN 2026.</span>
             </div>
         </div>
 
         <section>
             <h2>About</h2>
             <p>
-                I'm a theory-oriented computer scientist interested in combinatorial structures 
-                and the hunt for tight bounds. My work involves constructing extremal examples, 
-                finding structural invariants, and proving that natural upper bounds cannot be improved.
+                I'm a theory-oriented computer scientist interested in combinatorial structures
+                and the hunt for tight bounds. My work involves constructing extremal examples,
+                finding structural invariants, and studying when natural upper bounds are tight.
             </p>
             <p>
-                Currently, my research focuses on repetitiveness measures in strings. In particular, 
-                the relationship between combinatorial and compression-based complexity. 
-                But I'm broadly interested in problems where discrete structure meets 
-                computational constraints: data structure lower bounds, 
+                Currently, my research focuses on de Bruijn-type constructions and their
+                interaction with the Burrows-Wheeler transform. I am especially interested
+                in how cyclic combinatorial structure controls repetitiveness measures and
+                the limits of compressed indexes.
+            </p>
+            <p>
+                More broadly, I like problems where discrete structure meets computational
+                constraints: string algorithms, compressed indexes, extremal constructions,
                 and the mathematics of efficient representation.
             </p>
             <p>
-                I work with <a href="https://pessoal.dainf.ct.utfpr.edu.br/zatesko/">Leandro Zatesko</a> 
+                I work with <a href="https://pessoal.dainf.ct.utfpr.edu.br/zatesko/">Leandro Zatesko</a>
                 as part of the <a href="https://www.inf.ufpr.br/teoria/">Theory Group</a> at UFPR.
             </p>
         </section>
@@ -407,35 +454,60 @@
         <section>
             <h2>Research Interests</h2>
             <p>
-                Combinatorics, stringology, compressed data structures, computational complexity.
+                String algorithms, combinatorics on words, de Bruijn sequences,
+                the Burrows-Wheeler transform, suffixient sets, repetitiveness measures,
+                compressed indexes, and finite-field/LFSR constructions.
             </p>
         </section>
 
         <section>
             <h2>Publications</h2>
-            
-            <div class="publication">
-                <p class="pub-title">On the near-tightness of χ ≤ 2r: a general σ-ary construction and a binary case via LFSRs</p>
-                <p class="pub-authors">Vinicius Tikara Venturi Date, Leandro Miranda Zatesko</p>
-                <p class="pub-meta">
+
+            <div class="item">
+                <p class="item-title">On the near-tightness of χ ≤ 2r: a general σ-ary construction and a binary case via LFSRs</p>
+                <p class="item-authors">Vinicius Tikara Venturi Date, Leandro Miranda Zatesko</p>
+                <p class="item-meta">
                     <span><span class="status-tag">Accepted</span> — LATIN 2026</span>
                     <a href="https://arxiv.org/abs/2512.20598">[arXiv]</a>
                 </p>
+                <p class="item-note">
+                    Shows that the bound χ ≤ 2r is asymptotically tight, via a general
+                    σ-ary construction and a binary construction from LFSR-generated
+                    de Bruijn sequences.
+                </p>
+                <p class="item-note">
+                    One proof uses <a href="https://oeis.org/A073639">OEIS A073639</a> as a condition;
+                    the entry now links the paper.
+                </p>
             </div>
 
-            <div class="publication">
-                <p class="pub-title">Exploring graph representation strategies for text classification</p>
-                <p class="pub-authors">Henrique V. Ehrenfried, Vinicius Tikara V. Date, Eduardo Todt</p>
-                <p class="pub-meta">
+            <div class="item">
+                <p class="item-title">Successor right-special strings with few Burrows-Wheeler Transform runs</p>
+                <p class="item-authors">Vinicius Tikara Venturi Date, Leandro Miranda Zatesko</p>
+                <p class="item-meta">
+                    <span><span class="status-tag">Manuscript</span> — 2026</span>
+                    <a href="https://arxiv.org/abs/2602.20949">[earlier arXiv version]</a>
+                </p>
+                <p class="item-note">
+                    Studies a rigid de Bruijn-type regime where every context has exactly
+                    two fixed successor extensions. Gives explicit low-run BWT constructions
+                    and closed-form χ/r ratios approaching 2.
+                </p>
+            </div>
+
+            <div class="item">
+                <p class="item-title">Exploring graph representation strategies for text classification</p>
+                <p class="item-authors">Henrique V. Ehrenfried, Vinicius Tikara V. Date, Eduardo Todt</p>
+                <p class="item-meta">
                     <span>Connection Science, 2023</span>
                     <a href="https://doi.org/10.1080/09540091.2023.2256916">[doi]</a>
                 </p>
             </div>
 
-            <div class="publication">
-                <p class="pub-title">Um relato da experiência de construir um sistema para integração de dados e criação de indicadores para um programa governamental</p>
-                <p class="pub-authors">Henrique V. Ehrenfried, Vinicius Tikara V. Date, et al.</p>
-                <p class="pub-meta">
+            <div class="item">
+                <p class="item-title">Um relato da experiência de construir um sistema para integração de dados e criação de indicadores para um programa governamental</p>
+                <p class="item-authors">Henrique V. Ehrenfried, Vinicius Tikara V. Date, et al.</p>
+                <p class="item-meta">
                     <span>Latinoware, 2023</span>
                     <a href="https://sol.sbc.org.br/index.php/latinoware/article/view/26485">[link]</a>
                 </p>
@@ -443,14 +515,53 @@
         </section>
 
         <section>
-            <h2>Awards</h2>
-            
+            <h2>Talks</h2>
+
+            <div class="item">
+                <p class="item-title">On the near-tightness of χ ≤ 2r</p>
+                <p class="item-authors">LATIN 2026 · Florianópolis, Brazil</p>
+                <p class="item-meta">
+                    <a href="/slides/latin-2026.pdf">[slides]</a>
+                    <a href="https://arxiv.org/abs/2512.20598">[paper]</a>
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Thesis</h2>
+            <p>
+                <strong>Repetitiveness measures in compressed string indexes:
+                suffixient sets, BWT runs, and de Bruijn sequences.</strong>
+                MSc dissertation, UFPR, expected 2026. Advisor: Leandro Miranda Zatesko.
+            </p>
+        </section>
+
+        <section>
+            <h2>Selected Projects</h2>
+
+            <div class="item">
+                <p class="item-title">east_shmup</p>
+                <p class="item-note">
+                    Ongoing C++/Vulkan systems project: a small renderer/runtime for a
+                    Touhou-style bullet hell, mainly as a way to learn GPU-facing graphics
+                    programming from the ground up.
+                </p>
+                <p class="item-meta">
+                    <span>in progress</span>
+                    <a href="https://github.com/tikaradate/east_shmup">[github]</a>
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Awards & Competitions</h2>
+
             <div class="award">
                 <div class="award-header">
                     <span class="award-name">Fundação Araucária MSc Studentship</span>
                     <span class="award-year">2025</span>
                 </div>
-                <p class="award-detail">Ranked 1st among MSc applicants from the Department of Informatics</p>
+                <p class="award-detail">Ranked 1st among MSc proposals from UFPR's Department of Informatics.</p>
             </div>
 
             <div class="award">
@@ -458,7 +569,7 @@
                     <span class="award-name">SBC Outstanding Student Award</span>
                     <span class="award-year">2023</span>
                 </div>
-                <p class="award-detail">UFPR Computer Science department representative</p>
+                <p class="award-detail">Top graduating student of the UFPR Computer Science cohort.</p>
             </div>
 
             <div class="award">
@@ -466,15 +577,16 @@
                     <span class="award-name">Brazilian ICPC Regionals</span>
                     <span class="award-year">2021, 2023</span>
                 </div>
+                <p class="award-detail">Twice qualified and competed in the Brazilian regional phase of the ICPC-style SBC Programming Marathon.</p>
             </div>
         </section>
 
         <section>
             <h2>Teaching</h2>
             <p>
-                Teaching assistant at UFPR for algorithms and graph theory, including guest lectures 
-                on flow algorithms. Co-lectured an ICPC-style problem-solving course and coached a 
-                student team that qualified for the Brazilian national finals in 2024.
+                Teaching assistant at UFPR for algorithms and graph theory, including guest lectures
+                on max flow / min cut. Co-lectured an ICPC-style problem-solving course and coached
+                a student team that qualified for the Brazilian national finals in 2024.
             </p>
         </section>
 
@@ -501,7 +613,7 @@
         </section>
 
         <footer>
-            <span>Last updated December 2025</span>
+            <span>Last updated May 2026</span>
             <span>Curitiba, Brazil</span>
         </footer>
     </div>
@@ -510,7 +622,7 @@
         const toggle = document.getElementById('theme-toggle');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const stored = localStorage.getItem('theme');
-        
+
         if (stored) {
             document.documentElement.setAttribute('data-theme', stored);
             toggle.textContent = stored === 'dark' ? '☀️' : '🌙';
